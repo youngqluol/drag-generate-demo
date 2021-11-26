@@ -1,17 +1,23 @@
 <template>
-  <div class="display-area"
-       @drop="handleDrop"
-       @dragover="handleDragOver"
-       @mousedown="handleMouseDown($event)">
-    <div v-for="(item, index) in currentCompListData"
-         :key="index"
-         :class="{borderShow: index === currentCompIndex || index === newestCompIndex}"
-         :style="compBorderStyle[index]"
-         class="comp-border">
-      <component :is="item.component"
-                 :class="item.compClass"
-                 :propStyle="{left: 0,top: 0}"
-                 v-bind="item.propValue"></component>
+  <div
+    class="display-area"
+    @drop="handleDrop"
+    @dragover="handleDragOver"
+    @mousedown="handleMouseDown($event)"
+  >
+    <div
+      v-for="(item, index) in currentCompListData"
+      :key="index"
+      :class="{ borderShow: index === currentCompIndex || index === newestCompIndex }"
+      :style="compBorderStyle[index]"
+      class="comp-border"
+    >
+      <component
+        :is="item.component"
+        :class="item.compClass"
+        :propStyle="{ left: 0, top: 0 }"
+        v-bind="item.propValue"
+      ></component>
     </div>
   </div>
 </template>
@@ -151,17 +157,17 @@ export default {
 };
 </script>
 <style lang="less" scoped>
-  .display-area {
-    position: relative;
-    width: 100%;
-    height: 100%;
+.display-area {
+  position: relative;
+  width: 100%;
+  height: 100%;
 
-    .borderShow {
-      border: 1px solid red;
-    }
-
-    .comp-border {
-      position: absolute;
-    }
+  .borderShow {
+    border: 1px solid red;
   }
+
+  .comp-border {
+    position: absolute;
+  }
+}
 </style>

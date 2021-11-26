@@ -1,7 +1,5 @@
 <template>
-  <div class="text-wrapper"
-       :style="computedStyle"
-       @click="test()">
+  <div class="text-wrapper" :style="computedStyle" @click="test()">
     <div class="text">{{ text }}</div>
   </div>
 </template>
@@ -53,14 +51,14 @@ export default {
 };
 </script>
 <style lang="less" scoped>
-  .text-wrapper {
-    position: absolute;
-    border: 1px solid gray;
+.text-wrapper {
+  position: absolute;
+  border: 1px solid gray;
 
-    .text {
-      width: 100%;
-      height: 100%;
-      text-align: center;
-    }
+  .text {
+    width: 100%;
+    height: 100%;
+    text-align: center;
   }
+}
 </style>

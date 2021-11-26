@@ -6,8 +6,7 @@
     <div>{{ info }}</div>
     <div>{{ postRes }}</div>
     <div>{{ addRes }}</div>
-    <div v-for="index in 3"
-         :key="index">{{ test(index) }}</div>
+    <div v-for="index in 3" :key="index">{{ test(index) }}</div>
   </div>
 </template>
 <script>
@@ -19,7 +18,9 @@ export default {
       info: null,
       postRes: null,
       addRes: null,
-      test: (value) => { return value; } 
+      test: value => {
+        return value;
+      }
     };
   },
   methods: {

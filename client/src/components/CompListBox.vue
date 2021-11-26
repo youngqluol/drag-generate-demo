@@ -1,13 +1,14 @@
 <template>
-  <div class="comp-list-box"
-       @dragstart="handleDragStart">
-    <div v-for="(item, index) in compListData"
-         :key="item.name"
-         class="comp-item"
-         draggable
-         :data-index="index"
-         @mousedown="handleMouseDown"
-         @dragend="handleDragEnd">{{ item.label }}</div>
+  <div class="comp-list-box" @dragstart="handleDragStart">
+    <div
+      v-for="(item, index) in compListData"
+      :key="item.name"
+      class="comp-item"
+      draggable
+      :data-index="index"
+      @mousedown="handleMouseDown"
+      @dragend="handleDragEnd"
+    >{{ item.label }}</div>
   </div>
 </template>
 <script>
@@ -37,17 +38,17 @@ export default {
 };
 </script>
 <style lang="less" scoped>
-  .comp-list-box {
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
+.comp-list-box {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
 
-    .comp-item {
-      width: 80%;
-      height: 0.4rem;
-      text-align: center;
-      line-height: 0.4rem;
-      border: 1px solid gray;
-    }
+  .comp-item {
+    width: 80%;
+    height: 0.4rem;
+    text-align: center;
+    line-height: 0.4rem;
+    border: 1px solid gray;
   }
+}
 </style>

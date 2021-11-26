@@ -1,23 +1,20 @@
 <template>
   <div class="comp-config-box">
-    <div v-if="isCompEmpty"
-         class="empty">请选择组件</div>
+    <div v-if="isCompEmpty" class="empty">请选择组件</div>
     <div v-else>
       <!-- {{ currentCompInfo }} -->
       <section>
-        <div v-for="item in compConfigData"
-             :key="item.name">
+        <div v-for="item in compConfigData" :key="item.name">
           <el-divider v-if="item.compTag === 'el-divider'">{{ item.name }}</el-divider>
-          <div v-if="item.compTag === 'el-input-number'"
-               class="el-input-number-container">
+          <div v-if="item.compTag === 'el-input-number'" class="el-input-number-container">
             <div class="input-number-label">{{ item.name }}：</div>
-            <el-input-number 
+            <el-input-number
               v-model="currentCompInfo.propStyle[item.valueName]"
               controls-position="right"
-              v-bind="item.comProps"></el-input-number>
+              v-bind="item.comProps"
+            ></el-input-number>
           </div>
-          <div v-if="item.compTag === 'el-input'"
-               class="el-input-container">
+          <div v-if="item.compTag === 'el-input'" class="el-input-container">
             <div class="input-label">{{ item.name }}：</div>
             <el-input v-model="currentCompInfo.propValue[item.valueName]"></el-input>
           </div>
@@ -59,8 +56,7 @@ export default {
       }
     }
   },
-  methods: {
-  }
+  methods: {}
 };
 </script>
 <style lang="less" scoped>

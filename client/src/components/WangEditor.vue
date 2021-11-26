@@ -27,9 +27,7 @@ export default {
     this.editorInstance.create();
   },
   methods: {
-    handleClick() {
-
-    },
+    handleClick() {},
     getHtml() {
       this.editorHtml = this.editorInstance.txt.html();
     }
@@ -37,5 +35,4 @@ export default {
 };
 </script>
 <style lang="less" scoped>
-
 </style>
